@@ -81,8 +81,8 @@
                     </h3>
                 </div>
             </div>
-            <div class="file-upload-content">
-                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+            <div class="file-upload-content" align="center">
+                <img class="file-upload-image" align="center" id="face-image" src="#" alt="your image" />
             <div id="loading" class="animated bounce">
                 <div class="spinner-border" role="status">
                     <span class="sr-only">Loading...</span>
@@ -213,7 +213,7 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
             // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
             // the link to your model provided by Teachable Machine export panel
-            const URL = 'https://teachablemachine.withgoogle.com/models/q2kKTiUkf/';
+            const URL = 'https://teachablemachine.withgoogle.com/models/wv6gJ2X1o/';
             let model, webcam, labelContainer, maxPredictions;
             // Load the image model and setup the webcam
             async function init() {
@@ -261,18 +261,42 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     case 'happy':
                         resultTitle = '행복';
                         resultExplain =
-                            '에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!';
-                        resultCeleb = '';
+                            '저는 지금 행복해요. 제가 행복한 이유는 주인님과 함께 있어서랍니다. 앞으로도 주인님과 항상 함께 하고 싶어요!';
+                        resultCeleb = '만족, 기쁨, 즐거움, 재미, 웃음';
                         break;
                     case 'angry':
                         resultTitle = '화남';
                         resultExplain =
-                            '관심 받는 것을 좋아하고 연인에게는 은근히 애교쟁이다. 시크한 츤데레로 ';
-                        resultCeleb = '';
+                            '저는 지금 화나 있고 눈에 보이는 것은 일단 물거에요. 당신도 예외가 아니랍니다.'
+                        resultCeleb = '짜증, 불안, 혐오, 불만';
+                        break;
+                        case 'sad':
+                        resultTitle = '슬픔';
+                        resultExplain =
+                            '오늘은 놀고 싶지 않은 날이네요.';
+                        resultCeleb = '걱정, 후회, 외로움';
+                        break;
+                        case 'curious':
+                        resultTitle = '호기심';
+                        resultExplain =
+                            '저는 당신에게 관심있어요. 나랑 놀아 줄건가요?';
+                        resultCeleb = '흥미, 재미, 경탄, 기대';
+                        break;
+                        case 'hungry':
+                        resultTitle = '배고픔';
+                        resultExplain =
+                            '배고파요. 배고파서 현기증 날 것 같아요';
+                        resultCeleb = '걱정, 불안, 욕구';
+                        break;
+                        case 'bored':
+                        resultTitle = '지루함';
+                        resultExplain =
+                            '정말 지루하네요. 안 놀아 주실거면 잠이나 잘까봐요.';
+                        resultCeleb = '피곤, 짜증, 귀찮음';
                         break;
                     default:
-                        resultTitle = '알수없음';
-                        resultExplain = '';
+                        resultTitle = '번역실패';
+                        resultExplain = '번역에 실패하였습니다. 다시 시도해주세요';
                         resultCeleb = '';
                 }
                 var title =
@@ -307,20 +331,17 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                         case 'angry':
                             labelTitle = '화남';
                             break;
-                        case 'rabbit':
-                            labelTitle = '토끼상';
+                        case 'sad':
+                            labelTitle = '슬픔';
                             break;
-                        case 'dinosaur':
-                            labelTitle = '공룡상';
+                        case 'curious':
+                            labelTitle = '호기심';
                             break;
-                        case 'bear':
-                            labelTitle = '곰상';
+                        case 'hungry':
+                            labelTitle = '배고픔';
                             break;
-                        case 'deer':
-                            labelTitle = '사슴상';
-                            break;
-                        case 'fox':
-                            labelTitle = '여우상';
+                        case 'bored':
+                            labelTitle = '지루함';
                             break;
                         default:
                             labelTitle = '알수없음';
@@ -346,11 +367,9 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
         </script>
 
         <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link"
-            >Thanks to 조코딩 유튜브</a
-        >
-        <img src="" alt="" class="youtube-icon" />
-        <p><a href="#top">맨 위로</a></p>
-    </body>
+            >Thanks to 조코딩 유튜브</a>
+            <p><a href="#top">맨 위로</a></p>
+</body>
     <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

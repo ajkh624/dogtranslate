@@ -71,10 +71,10 @@ body {
 }
 
 .file-upload-image {
-    max-height: 200px;
-    max-width: 200px;
-    margin: auto;
-    padding: 20px;
+    text-align: center;
+    max-height: 600px;
+    max-width: 350px;
+    margin: 0 auto;
 }
 
 .remove-image {
@@ -211,6 +211,74 @@ body {
     border-radius: 10px;
     background-color: rgba(128, 0, 0, 0.2);
 }
+.sad-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(27, 175, 234, 0.2);
+}
+.sad-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(27, 175, 234, 1);
+}
+.curious-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(251, 176, 59, 0.2);
+}
+.curious-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(251, 176, 59, 1);
+}
+.hungry-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(195, 140, 102, 0.2);
+}
+.hungry-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(195, 140, 102, 1);
+}
+.bored-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(49, 132, 155, 0.2);
+}
+.bored-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(49, 132, 155, 1);
+}
 
 .happy-animal-title {
     color: #3ba363;
@@ -224,9 +292,46 @@ body {
 .angry-animal-title {
     color: #ea0000;
     font-size: 3rem;
+     font-weight: bold;
 }
 .angry-animal-celeb {
     color: #ea0000;
+    font-size: 1.2rem;
+}
+.sad-animal-title {
+    color: #ff6c0a;
+    font-size: 3rem;
+     font-weight: bold;
+}
+.sad-animal-celeb {
+    color: #ff6c0a;
+    font-size: 1.2rem;
+}
+.curious-animal-title {
+    color: #548dd4;
+    font-size: 3rem;
+     font-weight: bold;
+}
+.curious-animal-celeb {
+    color: #548dd4;
+    font-size: 1.2rem;
+}
+.hungry-animal-title {
+    color: #e56995;
+    font-size: 3rem;
+     font-weight: bold;
+}
+.hungry-animal-celeb {
+    color: #e56995;
+    font-size: 1.2rem;
+}
+.bored-animal-title {
+    color: #9b6b43;
+    font-size: 3rem;
+     font-weight: bold;
+}
+.bored-animal-celeb {
+    color: #9b6b43;
     font-size: 1.2rem;
 }
 
