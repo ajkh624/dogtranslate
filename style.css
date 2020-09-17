@@ -1,35 +1,14 @@
 body {
     font-family: sans-serif;
-    background-color: #eeeeee;
+    background-color: #ffffff;
 }
 
 .file-upload {
     background-color: #ffffff;
-    width: 600px;
+    width: 60 vw;
+    height: 50 vw;
     margin: 0 auto;
-    padding: 20px;
-}
-
-.file-upload-btn {
-    width: 100%;
-    margin: 0;
-    color: #fff;
-    background: #1fb264;
-    border: none;
-    padding: 10px;
-    border-radius: 4px;
-    border-bottom: 4px solid #15824b;
-    transition: all 0.2s ease;
-    outline: none;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-.file-upload-btn:hover {
-    background: #1aa059;
-    color: #ffffff;
-    transition: all 0.2s ease;
-    cursor: pointer;
+    padding: 13%;
 }
 
 .file-upload-btn:active {
@@ -54,15 +33,20 @@ body {
 }
 
 .image-upload-wrap {
-    margin-top: 20px;
-    border: 4px dashed #1fb264;
+    border: 4px dashed #f7f0f0;
     position: relative;
+    object-fit: contain;
+    border-radius: 10px;
+    border: dashed 5px;
+    width: 65;
+    margin: 0 auto;
 }
 
 .image-dropping,
 .image-upload-wrap:hover {
     background-color: #1fb264;
     border: 4px dashed #ffffff;
+    font-weight: bold;
 }
 
 .image-title-wrap {
@@ -75,10 +59,15 @@ body {
 }
 
 .drag-text h3 {
+    width: 85%;
     font-weight: 100;
     text-transform: uppercase;
-    color: #15824b;
-    padding: 60px 0;
+    color: #35465d;
+    font-size: 2.5rem;
+    line-height: 1.53;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
 }
 
 .file-upload-image {
@@ -114,7 +103,159 @@ body {
     border: 0;
     transition: all 0.2s ease;
 }
-.ad-banner{
+.ad-banner {
     width: 320px;
-    margin: 0 auto; 
+    margin: 10vw auto;
+}
+.nav-distance {
+    padding: 1.1% 7.7%;
+}
+.nabvar-light .navbar-brand {
+    font-size: 41px;
+    font-family: NanumSquareR;
+    line-height: 1.68;
+    font-weight:bold;
+    text-align: left;
+    color: #35465d;
+}
+.section {
+    margin-top: 100px;
+}
+.title {
+    font-family: NanumSquareR;
+    line-height: 1.67;
+    text-align: center;
+    color: #35465d;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-family: NanumSquareR;
+    line-height: 1.67;
+    text-align: center;
+    color: #35465d;
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 10px;
+    }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+}
+
+.youtube-link {
+    font-family: NanumSquareR;
+    font-size: 0.5rem;
+    line-height: 1.71;
+    text-align: left;
+    color: #35465d;
+}
+
+.space {
+    margin: 3vw;
+    padding: 3vw;
+    font-family: NanumSquareR;
+    line-height: 1.67;
+    text-align: center;
+    color: #35465d;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.at-share-btn-elements {
+    text-align: center;
+}
+
+.animal-label {
+    width: 20%;
+    text-align: left;
+    height: 2rem;
+}
+.bar-container {
+    height: 2.7rem;
+}
+
+.happy-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(117, 204, 84, 0.2);
+}
+.happy-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(117, 204, 84, 1);
+}
+.angry-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(128, 0, 0, 0.2);
+}
+.angry-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2rem;
+    border-radius: 10px;
+    background-color: rgba(128, 0, 0, 0.2);
+}
+
+.happy-animal-title {
+    color: #3ba363;
+    font-weight: bold;
+    font-size: 3rem;
+}
+.happy-animal-celeb {
+    color: #3ba363;
+    font-size: 1.2rem;
+}
+.angry-animal-title {
+    color: #ea0000;
+    font-size: 3rem;
+}
+.angry-animal-celeb {
+    color: #ea0000;
+    font-size: 1.2rem;
+}
+
+.animal-label {
+    width: 20%;
+    text-align: left;
+    height: 2rem;
+    font-weight: bold;
+}
+.animal-explain {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.try-again-btn {
+    border-radius: 40px;
+    border: solid 1.5px #35465d;
+    background-color: #35465d;
+}
+
+.try-again-text {
+    display: block;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #ffffff;
+    padding: 4px 15px;
+}
+
+.text-center {
+    color: #3ba363;
+    font-size: 2rem;
+    font-weight: bold;
 }

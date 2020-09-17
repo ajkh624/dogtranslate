@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous"
+        />
+
+        <title>동물표정 번역기</title>
         <link rel="stylesheet" href="style.css" />
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <script
@@ -9,22 +22,50 @@
         ></script>
     </head>
     <body>
-        <div>Teachable Machine Image Model</div>
-        <button type="button" onclick="init()">Start</button>
-        <button type="button" onclick="predict()">예측</button>
+        <nav class="navbar navbar-expand-lg navbar-light nav-distance">
+            <a class="navbar-brand" href="#">동물표정 번역기 (강아지)</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <!-- </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"
+                            >Disabled</a
+                        >
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+        <section class="section">
+            <h1 class="title">인공지능 강아지표정 번역기 v1.0</h1>
+            <h2 class="subtitle">지금 내 강아지는 무슨 기분일까?</h2>
+        </section>
+        <section class="youtube">
+            <div class="container youtube-cover d-flex flex-row-reverse"></div>
+        </section>
         <script
             class="jsbin"
             src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
         ></script>
-        <div class="file-upload">
-            <button
-                class="file-upload-btn"
-                type="button"
-                onclick="$('.file-upload-input').trigger( 'click' )"
-            >
-                Add Image
-            </button>
-
+        <div class="container file-upload">
             <div class="image-upload-wrap">
                 <input
                     class="file-upload-input"
@@ -33,16 +74,29 @@
                     accept="image/*"
                 />
                 <div class="drag-text">
-                    <h3>Drag and drop a file or select add Image</h3>
+                    <img src="img/images.png" class="mt-5 upload" />
+                    <h3 class="mt-5 pb-5 upload-text">
+                        강아지 사진을 <br />올려놓거나<br />
+                        눌러서 업로드하세요!<br />
+                    </h3>
                 </div>
             </div>
             <div class="file-upload-content">
                 <img class="file-upload-image" id="face-image" src="#" alt="your image" />
-                <div class="image-title-wrap">
-                    <button type="button" onclick="removeUpload()" class="remove-image">
-                        Remove <span class="image-title">Uploaded Image</span>
-                    </button>
+            <div id="loading" class="animated bounce">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
                 </div>
+                <p class="text-center">현재 AI가 강아지의 기분을 분석중입니다.</p>
+            </div>
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+                <div id="addThis" class="addthis_inline_share_toolbox_6lz1"></div>
+                
+            <div class="pt-3 image-title-wrap">
+                <button type="button p-2" class="try-again-btn" onclick="window.location.reload();">
+                    <span class="try-again-text">다른 사진으로 재시도</span>
+                </button>
             </div>
         </div>
         <div class="ad-banner">
@@ -60,12 +114,33 @@
             ></script>
             <script src="https://ads-partners.coupang.com/g.js"></script>
             <script>
-                new PartnersCoupang.G({ id: 323597 });
+                new PartnersCoupang.G({ id: 323700 });
             </script>
         </div>
-        <!-- <div id="webcam-container"></div> -->
-        <div id="label-container"></div>
 
+        <!-- <div id="webcam-container"></div> -->
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"
+        ></script>
+        <p class="space">
+            귀여운 강아지들의 <br />
+            사진 번역결과를 <br />공유해주세요!<br />
+        </p>
+        <hr />
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
         <div class="addthis_inline_share_toolbox"></div>
 
@@ -111,6 +186,11 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                     };
 
                     reader.readAsDataURL(input.files[0]);
+                    init().then(() => {
+                        console.log('hello');
+                        predict();
+                        $('#loading').hide();
+                    });
                 } else {
                     removeUpload();
                 }
@@ -174,13 +254,102 @@ this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your pag
                 // predict can take in an image, video or canvas html element
                 var image = document.getElementById('face-image');
                 const prediction = await model.predict(image, false);
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                console.log(prediction[0].className);
+                var resultTitle, resultExplain, resultCeleb;
+                switch (prediction[0].className) {
+                    case 'happy':
+                        resultTitle = '행복';
+                        resultExplain =
+                            '에서도 인기폭발이며 애교와 웃음이 많아 연인에게 특히나 사랑스럽다. 당신은 애인바라기로 애인의 관심이 부족하면 시무룩해지고 외로움을 타는 모습이 마치 강아지와 똑 닮았다!';
+                        resultCeleb = '';
+                        break;
+                    case 'angry':
+                        resultTitle = '화남';
+                        resultExplain =
+                            '관심 받는 것을 좋아하고 연인에게는 은근히 애교쟁이다. 시크한 츤데레로 ';
+                        resultCeleb = '';
+                        break;
+                    default:
+                        resultTitle = '알수없음';
+                        resultExplain = '';
+                        resultCeleb = '';
+                }
+                var title =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-animal-title'>" +
+                    resultTitle +
+                    '</div>';
+                var explain = "<div class='animal-explain pt-2'>" + resultExplain + '</div>';
+                var celeb =
+                    "<div class='" +
+                    prediction[0].className +
+                    "-animal-celeb pt-2 pb-2'>" +
+                    resultCeleb +
+                    '</div>';
+                $('.result-message').html(title + explain + celeb);
+
+                var barWidth;
                 for (let i = 0; i < maxPredictions; i++) {
-                    const classPrediction =
-                        prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
-                    labelContainer.childNodes[i].innerHTML = classPrediction;
+                    if (prediction[i].probability.toFixed(2) > 0.1) {
+                        barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + '%';
+                    } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                        barWidth = '4%';
+                    } else {
+                        barWidth = '2%';
+                    }
+                    var labelTitle;
+                    switch (prediction[i].className) {
+                        case 'happy':
+                            labelTitle = '행복';
+                            break;
+                        case 'angry':
+                            labelTitle = '화남';
+                            break;
+                        case 'rabbit':
+                            labelTitle = '토끼상';
+                            break;
+                        case 'dinosaur':
+                            labelTitle = '공룡상';
+                            break;
+                        case 'bear':
+                            labelTitle = '곰상';
+                            break;
+                        case 'deer':
+                            labelTitle = '사슴상';
+                            break;
+                        case 'fox':
+                            labelTitle = '여우상';
+                            break;
+                        default:
+                            labelTitle = '알수없음';
+                    }
+
+                    var label =
+                        "<div class='animal-label d-flex align-items-center'>" +
+                        labelTitle +
+                        '</div>';
+                    var bar =
+                        "<div class='bar-container position-relative container'><div class='" +
+                        prediction[i].className +
+                        "-box'></div><div class='d-flex justify-content-center align-items-center " +
+                        prediction[i].className +
+                        "-bar' style='width: " +
+                        barWidth +
+                        "'><span class='d-block percent-text'>" +
+                        Math.round(prediction[i].probability.toFixed(2) * 100) +
+                        '%</span></div></div>';
+                    labelContainer.childNodes[i].innerHTML = label + bar;
                 }
             }
         </script>
+
+        <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link"
+            >Thanks to 조코딩 유튜브</a
+        >
+        <img src="" alt="" class="youtube-icon" />
+        <p><a href="#top">맨 위로</a></p>
     </body>
     <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
 
