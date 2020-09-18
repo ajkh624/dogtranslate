@@ -1,2 +1,2 @@
 User-agent: *Allow:/
-Sitemap: https://ecstatic-snyder-b640b3.netlify.app/sitemap.xml
+Sitemap: https://pettranslation.netlify.app/sitemap.xml
